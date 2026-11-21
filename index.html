@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROKTO DATA (রক্তদাতা) - Bangladesh Blood Donor Network [BETA]</title>
+    <meta name="description" content="এক ফোঁটা রক্ত, বাঁচাতে পারে একটি জীবন। Bangladesh's nationwide voluntary blood donor network connecting donors and emergency seekers across 64 districts." />
+    <meta property="og:title" content="ROKTO DATA (রক্তদাতা) - Bangladesh Blood Donor Network" />
+    <meta property="og:description" content="এক ফোঁটা রক্ত, বাঁচাতে পারে একটি জীবন। Emergency blood donation network in Bangladesh." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#DC2626" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="রক্তদাতা" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Google Fonts for Bengali & English: Hind Siliguri & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script>
+      // Filter out benign Vite HMR WebSocket closing notices in iframe preview
+      window.addEventListener('error', function(e) {
+        if (e && (e.message?.includes('WebSocket') || e.error?.message?.includes('WebSocket'))) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        if (e && e.reason?.message?.includes('WebSocket')) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      }, true);
+      var _cError = console.error;
+      console.error = function() {
+        var msg = arguments[0];
+        if (typeof msg === 'string' && msg.includes('WebSocket closed without opened')) return;
+        if (msg && msg.message && msg.message.includes('WebSocket closed without opened')) return;
+        _cError.apply(console, arguments);
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-900 antialiased selection:bg-red-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

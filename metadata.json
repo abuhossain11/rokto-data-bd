@@ -1,0 +1,10 @@
+{
+  "name": "ROKTO DATA (রক্তদাতা) - Bangladesh Blood Donor Network",
+  "description": "Nationwide voluntary blood donor network in Bangladesh connecting emergency blood seekers and voluntary donors across all 8 divisions and 64 districts with PWA and OpenStreetMap.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
